@@ -1,12 +1,10 @@
-module counter (Clear, Clock, Q);
-  input Clear, Clock;
-  output [1:0] Q;
+module counter (reset, clock, Q);
+	input wire reset, clock;
+	output reg [3:0] Q;
 
-  reg [1:0] Q;
-
-  always @(posedge Clock)
-    if (Clear)
-      Q <= 2'b0;
-    else
-      Q <= Q + 1'b1;
+	always @(posedge clock)
+		if (reset)
+			Q <= 'b0;
+		else
+			Q <= Q + 'b1;
 endmodule

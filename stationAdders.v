@@ -1,30 +1,46 @@
-integer i;
+module stationAdders(clock, reset, CDB, reg1, reg2, OP, regDest, dataOut);
+  input clock, reset;                  // clock
+  input [15:0] CDB;                    // barramento CDB
+  input [15:0] reg1, reg2;             // registrador do banco de registradores
+  input OP;                            // operação a ser realizada
+  output [15:0]dataOut;                //saida para o CDB
+  output [1:0]Qi; //endereco passado para o banco de registradores
+                  //representando em qual posicao da estacao de reserva
+  integer i;
 
-module stationAdders(Clock, CDB, reg1, reg2, resv_out1, resv_out2, OP);
-  input Clock;                          // clock
-  input [15:0] CDB;                     // barramento CDB
-  input [TAM:0] reg1, reg2;             // registrador do banco de registradores
-  output [TAM:0] resv_out1, resv_out2   // saida da unidade de reserva
-
-  input OP;                             // operação a ser realizada
-
-  reg Qj, Qk; // estacao que produzirao o operando fonte.
-  reg Vj, Vk; // valores do operando fonte
   //reg A;      // usado no calculo de endereco de memoria em load store
-  reg [2:0] Busy;   // indica que a estacao de reserva e a unidade funcional estao pontas
+  reg Busy, Qj, Qk, Vj, Vk;   // indica que a estacao de reserva e a unidade
+                              //funcional estao pontas
+  // inicializa zerando o busy e todos os valores de controle;
+  initial begin
+    Busy[i] = 'b00;
+    Vj[i] = 'b0;
+    Vk[i] = 'b0;
+    Qj[i] = 'b0;
+    Qk[i] = 'b0;
+  end
 
-  // inicializa zerando o busy
-  for (i = 0; i < 3; i++) begin
-    Busy[i] = 0;
-  end // for
+  reorderBuffer rb(reg1, reg2, regDest, );
 
-  always @(posedge Clock) begin
+  //tbm devo chamar o adders para realizar a operacao
+  always @(posedge clock) begin
     if(Busy[0] == 0) begin // se estiver vazio
+      adders ad1(clock, dataOut, reg1, reg2, OP);
+      Qi = 1'b0;
     end // if
     else if (Busy[1] == 0) begin
+      adders ad2(clock, dataOut, reg1, reg2, OP);
+      Qi = 1'b1;
     end // else if
-    else if (Busy[2] == 0) begin
-    end // else if
+    else begin//caso em que todos os espaços da estacao estao ocupados
+    end//last else
   end // always
 
-end module
+  //zera os valores com reset
+  always @(posedge reset)begin
+    Busy[i] = 0;
+    Vj = 'b0;
+    Vk = 'b0;
+    Qj = 'b0;
+    Qk = 'b0;
+endmodule
