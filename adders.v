@@ -3,7 +3,7 @@ module adders(Clock, CDB, reg1, reg2, OP);
   input wire [15:0] reg1, reg2;  // saida da estacao de reserva
   input wire OP;                           // operação a ser realizada
   output reg [15:0] CDB;                  // barramento CDB
-  reg latencia;
+  reg [1:0]latencia;
 
   initial begin
     latencia = 2'b00;

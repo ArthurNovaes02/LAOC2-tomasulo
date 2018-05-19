@@ -17,7 +17,7 @@ module registers(clock, reset,
 	assign reg2Out = banco[reg2Index];//de acordo com os reg solicitados
 
 	initial begin
-	for(i = 0; i < 8; i=i+1)begin
+	for(i = 0; i < 7; i=i+1)begin
 		banco[i] = 'b0;
 	end
 
