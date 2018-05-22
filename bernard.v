@@ -882,50 +882,54 @@ module TomasuloEspec
              end
            end
 
+
            for(i=0;i<RESERVATIONSIZE;i=i+1) // percorre estacoes de reserva procurando dependencia
            begin
              if(reservationStationAddJusy[i]==1) //  ha dependencia
-             if(reservationStationAddQj[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationAddVj[i]=MulValue; // grava o valor
-               reservationStationAddJusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationAddQj[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationAddVj[i]=MulValue; // grava o valor
+                reservationStationAddJusy[i]=0; // remove a dependencia
+              end
              if(reservationStationAddKusy[i]==1) //  ha dependencia
-             if(reservationStationAddQk[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationAddVk[i]=MulValue; // grava o valor
-               reservationStationAddKusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationAddQk[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationAddVk[i]=MulValue; // grava o valor
+                reservationStationAddKusy[i]=0; // remove a dependencia
+              end
              if(reservationStationMulJusy[i]==1) //  ha dependencia
-             if(reservationStationMulQj[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationMulVj[i]=MulValue; // grava o valor
-               reservationStationMulJusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationMulQj[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationMulVj[i]=MulValue; // grava o valor
+                reservationStationMulJusy[i]=0; // remove a dependencia
+                end
              if(reservationStationMulKusy[i]==1) //  ha dependencia
-             if(reservationStationMulQk[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationMulVk[i]=MulValue; // grava o valor
-               reservationStationMulKusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationMulQk[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationMulVk[i]=MulValue; // grava o valor
+                reservationStationMulKusy[i]=0; // remove a dependencia
+                end
+
+                // LD
              if(reservationStationLdJusy[i]==1) //  ha dependencia
-             if(reservationStationLdQj[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationLdVj[i]=MulValue; // grava o valor
-               reservationStationLdJusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationLdQj[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationLdVj[i]=MulValue; // grava o valor
+                reservationStationLdJusy[i]=0; // remove a dependencia
+                end
+                STORE'
              if(reservationStationStJusy[i]==1) //  ha dependencia
-             if(reservationStationStQj[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationStVj[i]=MulValue; // grava o valor
-               reservationStationStJusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationStQj[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationStVj[i]=MulValue; // grava o valor
+                reservationStationStJusy[i]=0; // remove a dependencia
+              end
              if(reservationStationStKusy[i]==1) //  ha dependencia
-             if(reservationStationStQk[i]==reservationStationMulLabel[MulIndex])
-             begin
-               reservationStationStVk[i]=MulValue; // grava o valor
-               reservationStationStKusy[i]=0; // remove a dependencia
-             end
+              if(reservationStationStQk[i]==reservationStationMulLabel[MulIndex])
+              begin
+                reservationStationStVk[i]=MulValue; // grava o valor
+                reservationStationStKusy[i]=0; // remove a dependencia
+                end
            end
            reservationStationMulBusy[MulIndex]=0; // limpa a estacao de reserva
            MulDone=0; MulBusy=0;// desocupa a unidade

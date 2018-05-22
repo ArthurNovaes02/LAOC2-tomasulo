@@ -1,13 +1,17 @@
 module ucCDB (Clock,
               bancoRegIn,     bancoRegOut,
-              registerAddIn,  registerAddOut,
-              registerMulIn,  registerMulOut
-              instruction);
+              registerAddIn,  registerAddData,
+              registerMulIn,  registerMulData,
+              instruction,
+              QjSum, QjMul, QkSum, QkMul,
+              VjSum, VjMul, VkSum, VkMul);
 
   input Clock;
   input instruction;
   output cdbOut;
-  input bancoRegOut, registerAddOut, registerMulOut;
+  input [label]QjSum, VjSum;
+  input [label]QjMul, VjMul;
+  input bancoRegOut, registerAddData, registerMulData;
   reg [23:0]CDB;
 
   /* Padrão do dado no CDB
@@ -38,37 +42,41 @@ module ucCDB (Clock,
     */
 
 
-    if (registerAddOut | registerMulOut | bancoRegOut)  // se tiver algum dado para ser ecrito no CDB
+    if (registerAddData | registerMulData | bancoRegOut)  // se tiver algum dado para ser ecrito no CDB
     begin
       // em ordem de prioridade mul, add, banco registradores
-      if (registerAddOut & [15]CDB == 0)
+      if (registerAddData & [15]CDB == 0)
       begin // se tiver algum dado pronto da multiplicacao e o cdb estiver desocupado
         [22]cdbOut = 1'b1;  // cdb ocupado
-        for (se houver dependencias) // percorre estacoes de reserva procurando dependencia
+
+        for (se houver dependencias percorre os labels) // percorre estacoes de reserva procurando dependencia
         begin
           // @TODO: concertar os nomes das variaveris e por isso
+          // @TODO: descobrir pra serve o Jusy
           if(reservationStationAddJusy[i]==1) //  ha dependencia
-           if(reservationStationAddQj[i]==reservationStationMulLabel[MulIndex])
+           if(QjSUM[i]==[20:19]CDB) // Compara o label da estação de reserva
            begin
-             reservationStationAddVj[i]=MulValue; // grava o valor
+             VjSum[i]=MulValue; // grava o valor
              reservationStationAddJusy[i]=0; // remove a dependencia
            end
           if(reservationStationAddKusy[i]==1) //  ha dependencia
-           if(reservationStationAddQk[i]==reservationStationMulLabel[MulIndex])
+           if(QkSum[i]==[20:19]CDB) // Compara o label da estação de reserva
            begin
-             reservationStationAddVk[i]=MulValue; // grava o valor
+             VkSum[i]=MulValue; // grava o valor
              reservationStationAddKusy[i]=0; // remove a dependencia
            end
           if(reservationStationMulJusy[i]==1) //  ha dependencia
-           if(reservationStationMulQj[i]==reservationStationMulLabel[MulIndex])
+           if(QjMul[i]==[20:19]CDB) // Compara o label da estação de reserv
            begin
-             reservationStationMulVj[i]=MulValue; // grava o valor
-             reservationStationMulJusy[i]=0; // remove a dependencia
+             VjMul[i]=MulValue; // grava o valor
+             reservationStationMulJusy
+
+             [i]=0; // remove a dependencia
              end
           if(reservationStationMulKusy[i]==1) //  ha dependencia
-           if(reservationStationMulQk[i]==reservationStationMulLabel[MulIndex])
+           if(QkMul[i]==[20:19]CDB) // Compara o label da estação de reserva
            begin
-             reservationStationMulVk[i]=MulValue; // grava o valor
+             VkMul[i]=MulValue; // grava o valor
              reservationStationMulKusy[i]=0; // remove a dependencia
              end
           end // for para saber se há dependencia de dados
@@ -78,17 +86,18 @@ module ucCDB (Clock,
         end
         [21]cdbOur = 1'b0;  // operacao de ADD ou SUB
         [20:19]cdbOut = ?
-        [15:0]cdbOut = registerAddOut;
+        [15:0]cdbOut = registerAddData;
       end
-      else if (registerMulOut & [15]CDB == 0)
+      else if (registerMulData & [15]CDB == 0)
       begin
         //@TODO: fazer a mesma coisa para o mul
         [22]cdbOut = 1'b1;  // cdb ocupado
         [21]cdbOur = 1'b1;  // operacao de MUL ou DIV
         [20:19]cdbOut = ?
-        [15:0]cdbOut = registerMulOut;
+        [15:0]cdbOut = registerMulData;
       end
       else if ([0]bancoRegOut & [15]CDB == 0) begin // se tiver dado do
+        //@TODO: o que fazer aqui???
         [22]cdbOut = 1'b1; // cdb ocupado
         [21]cdbOur = ?
         [20:19]cdbOut = ?
