@@ -30,31 +30,71 @@ module ucCDB (Clock,
    *      - 16 bits
    */
 
+
   always @(posedge Clock)
     /* decide quem pode escrever no CDB
     * este módulo recebe os dados de todo mundo e decida qual unidade pode
     * escrever efetivamente no CDB
     */
 
-    if ([15]CDB == 0){  // significa que o CDB está desocupado
-      if (bancoRegOut){
-        [22]cdbOut = 1'b1; // cdb ocupado
-        [21]cdbOur = ?
-        [20:19]cdbOut = ?
-        [15:0]cdbOut = bancoRegOut;
-      }
-      else if (registerAddOut){
+
+    if (registerAddOut | registerMulOut | bancoRegOut)  // se tiver algum dado para ser ecrito no CDB
+    begin
+      // em ordem de prioridade mul, add, banco registradores
+      if (registerAddOut & [15]CDB == 0)
+      begin // se tiver algum dado pronto da multiplicacao e o cdb estiver desocupado
         [22]cdbOut = 1'b1;  // cdb ocupado
+        for (se houver dependencias) // percorre estacoes de reserva procurando dependencia
+        begin
+          // @TODO: concertar os nomes das variaveris e por isso
+          if(reservationStationAddJusy[i]==1) //  ha dependencia
+           if(reservationStationAddQj[i]==reservationStationMulLabel[MulIndex])
+           begin
+             reservationStationAddVj[i]=MulValue; // grava o valor
+             reservationStationAddJusy[i]=0; // remove a dependencia
+           end
+          if(reservationStationAddKusy[i]==1) //  ha dependencia
+           if(reservationStationAddQk[i]==reservationStationMulLabel[MulIndex])
+           begin
+             reservationStationAddVk[i]=MulValue; // grava o valor
+             reservationStationAddKusy[i]=0; // remove a dependencia
+           end
+          if(reservationStationMulJusy[i]==1) //  ha dependencia
+           if(reservationStationMulQj[i]==reservationStationMulLabel[MulIndex])
+           begin
+             reservationStationMulVj[i]=MulValue; // grava o valor
+             reservationStationMulJusy[i]=0; // remove a dependencia
+             end
+          if(reservationStationMulKusy[i]==1) //  ha dependencia
+           if(reservationStationMulQk[i]==reservationStationMulLabel[MulIndex])
+           begin
+             reservationStationMulVk[i]=MulValue; // grava o valor
+             reservationStationMulKusy[i]=0; // remove a dependencia
+             end
+          end // for para saber se há dependencia de dados
+          // @TODO: limpa a estacao de reserva
+          // @TODO: desocupar a unidade
+          // @TODO: desocupar o CDB
+        end
         [21]cdbOur = 1'b0;  // operacao de ADD ou SUB
         [20:19]cdbOut = ?
         [15:0]cdbOut = registerAddOut;
-      }
-      else if (registerMulOut){
+      end
+      else if (registerMulOut & [15]CDB == 0)
+      begin
+        //@TODO: fazer a mesma coisa para o mul
         [22]cdbOut = 1'b1;  // cdb ocupado
         [21]cdbOur = 1'b1;  // operacao de MUL ou DIV
         [20:19]cdbOut = ?
         [15:0]cdbOut = registerMulOut;
-      }
+      end
+      else if ([0]bancoRegOut & [15]CDB == 0) begin // se tiver dado do
+        [22]cdbOut = 1'b1; // cdb ocupado
+        [21]cdbOur = ?
+        [20:19]cdbOut = ?
+        [15:0]cdbOut = bancoRegOut;
+      end
+    end // end if tiver algum dado para ser escrito no CDB
     }
 )
       //CDB 001/0010/0000
