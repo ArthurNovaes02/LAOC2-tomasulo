@@ -1,0 +1,1617 @@
+TimeQuest Timing Analyzer report for pratica3
+Fri May 25 01:25:23 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'SW[16]'
+ 12. Slow Model Hold: 'SW[16]'
+ 13. Slow Model Minimum Pulse Width: 'SW[16]'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'SW[16]'
+ 26. Fast Model Hold: 'SW[16]'
+ 27. Fast Model Minimum Pulse Width: 'SW[16]'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; pratica3                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; SW[16]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[16] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++------------------------------------------------+
+; Slow Model Fmax Summary                        ;
++----------+-----------------+------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
++----------+-----------------+------------+------+
+; 93.6 MHz ; 93.6 MHz        ; SW[16]     ;      ;
++----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; SW[16] ; -9.684 ; -1273.072     ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; SW[16] ; 0.391 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; SW[16] ; -1.222 ; -203.222             ;
++--------+--------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'SW[16]'                                                                                                                                     ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -9.684 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.300      ; 11.020     ;
+; -9.684 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.300      ; 11.020     ;
+; -9.684 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.300      ; 11.020     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.679 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.273      ; 10.988     ;
+; -9.651 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.217      ; 10.904     ;
+; -9.651 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.217      ; 10.904     ;
+; -9.651 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.217      ; 10.904     ;
+; -9.651 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.217      ; 10.904     ;
+; -9.623 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.021      ; 10.680     ;
+; -9.623 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.021      ; 10.680     ;
+; -9.623 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.021      ; 10.680     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.618 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; -0.006     ; 10.648     ;
+; -9.599 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.195      ; 10.830     ;
+; -9.590 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.062     ; 10.564     ;
+; -9.590 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.062     ; 10.564     ;
+; -9.590 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.062     ; 10.564     ;
+; -9.590 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.062     ; 10.564     ;
+; -9.538 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; -0.084     ; 10.490     ;
+; -9.531 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.248      ; 10.815     ;
+; -9.531 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.248      ; 10.815     ;
+; -9.531 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.248      ; 10.815     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.526 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.221      ; 10.783     ;
+; -9.507 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.275      ; 10.818     ;
+; -9.507 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.275      ; 10.818     ;
+; -9.507 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.275      ; 10.818     ;
+; -9.507 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.275      ; 10.818     ;
+; -9.498 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.165      ; 10.699     ;
+; -9.498 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.165      ; 10.699     ;
+; -9.498 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.165      ; 10.699     ;
+; -9.498 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.165      ; 10.699     ;
+; -9.446 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.143      ; 10.625     ;
+; -9.446 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.004     ; 10.478     ;
+; -9.446 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.004     ; 10.478     ;
+; -9.446 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; -0.004     ; 10.478     ;
+; -9.446 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; -0.004     ; 10.478     ;
+; -9.438 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.308      ; 10.782     ;
+; -9.438 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.308      ; 10.782     ;
+; -9.438 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.308      ; 10.782     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.433 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.281      ; 10.750     ;
+; -9.405 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.225      ; 10.666     ;
+; -9.405 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.225      ; 10.666     ;
+; -9.405 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.225      ; 10.666     ;
+; -9.405 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.225      ; 10.666     ;
+; -9.354 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.223      ; 10.613     ;
+; -9.354 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.223      ; 10.613     ;
+; -9.354 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.223      ; 10.613     ;
+; -9.354 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.223      ; 10.613     ;
+; -9.353 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.203      ; 10.592     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.302 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.298      ; 10.636     ;
+; -9.261 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.283      ; 10.580     ;
+; -9.261 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.283      ; 10.580     ;
+; -9.261 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.283      ; 10.580     ;
+; -9.261 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.283      ; 10.580     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.241 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.019      ; 10.296     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
+; -9.149 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.246      ; 10.431     ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'SW[16]'                                                                                                                                                 ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; Tomasulo:tomas|SumIndex[2]                   ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumState[0]                   ; Tomasulo:tomas|SumState[0]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|count[0]                      ; Tomasulo:tomas|count[0]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[1][10]     ; Tomasulo:tomas|TabelaValoresLabel[1][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[1][8]      ; Tomasulo:tomas|TabelaValoresLabel[1][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[1][9]      ; Tomasulo:tomas|TabelaValoresLabel[1][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[1][7]      ; Tomasulo:tomas|TabelaValoresLabel[1][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[1][6]      ; Tomasulo:tomas|TabelaValoresLabel[1][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[0][10]     ; Tomasulo:tomas|TabelaValoresLabel[0][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[0][8]      ; Tomasulo:tomas|TabelaValoresLabel[0][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[0][9]      ; Tomasulo:tomas|TabelaValoresLabel[0][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[0][6]      ; Tomasulo:tomas|TabelaValoresLabel[0][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[0][7]      ; Tomasulo:tomas|TabelaValoresLabel[0][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[2][6]      ; Tomasulo:tomas|TabelaValoresLabel[2][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[2][7]      ; Tomasulo:tomas|TabelaValoresLabel[2][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[2][8]      ; Tomasulo:tomas|TabelaValoresLabel[2][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[2][9]      ; Tomasulo:tomas|TabelaValoresLabel[2][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[2][10]     ; Tomasulo:tomas|TabelaValoresLabel[2][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[3][8]      ; Tomasulo:tomas|TabelaValoresLabel[3][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[3][9]      ; Tomasulo:tomas|TabelaValoresLabel[3][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[3][10]     ; Tomasulo:tomas|TabelaValoresLabel[3][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[3][7]      ; Tomasulo:tomas|TabelaValoresLabel[3][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresLabel[3][6]      ; Tomasulo:tomas|TabelaValoresLabel[3][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresIndex[0]         ; Tomasulo:tomas|TabelaValoresIndex[0]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresIndex[2]         ; Tomasulo:tomas|TabelaValoresIndex[2]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|TabelaValoresIndex[1]         ; Tomasulo:tomas|TabelaValoresIndex[1]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[0]                  ; Tomasulo:tomas|SumParamB[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumOp.00                      ; Tomasulo:tomas|SumOp.00                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[0]                   ; Tomasulo:tomas|SumValue[0]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamC[0]                  ; Tomasulo:tomas|SumParamC[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[1]                  ; Tomasulo:tomas|SumParamB[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[1]                   ; Tomasulo:tomas|SumValue[1]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamC[1]                  ; Tomasulo:tomas|SumParamC[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[2]                   ; Tomasulo:tomas|SumValue[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[3]                   ; Tomasulo:tomas|SumValue[3]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[3]                  ; Tomasulo:tomas|SumParamB[3]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[4]                   ; Tomasulo:tomas|SumValue[4]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[4]                  ; Tomasulo:tomas|SumParamB[4]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[5]                   ; Tomasulo:tomas|SumValue[5]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[5]                  ; Tomasulo:tomas|SumParamB[5]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[6]                   ; Tomasulo:tomas|SumValue[6]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|SumValue[7]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[7]                  ; Tomasulo:tomas|SumParamB[7]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[8]                   ; Tomasulo:tomas|SumValue[8]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[8]                  ; Tomasulo:tomas|SumParamB[8]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|SumValue[9]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[9]                  ; Tomasulo:tomas|SumParamB[9]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|SumValue[10]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[10]                 ; Tomasulo:tomas|SumParamB[10]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|SumValue[11]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[11]                 ; Tomasulo:tomas|SumParamB[11]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[12]                 ; Tomasulo:tomas|SumParamB[12]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[12]                  ; Tomasulo:tomas|SumValue[12]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[13]                  ; Tomasulo:tomas|SumValue[13]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[13]                 ; Tomasulo:tomas|SumParamB[13]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumParamB[14]                 ; Tomasulo:tomas|SumParamB[14]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[14]                  ; Tomasulo:tomas|SumValue[14]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Tomasulo:tomas|SumValue[15]                  ; Tomasulo:tomas|SumValue[15]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.526 ; Tomasulo:tomas|count[4]                      ; Tomasulo:tomas|count[4]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.792      ;
+; 0.578 ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.844      ;
+; 0.695 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[1][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.038      ; 0.999      ;
+; 0.779 ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ; Tomasulo:tomas|SumParamB[4]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.001      ; 1.046      ;
+; 0.779 ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ; Tomasulo:tomas|SumParamB[13]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.001      ; 1.046      ;
+; 0.800 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|TabelaValoresValue[3][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.040      ; 1.106      ;
+; 0.804 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|TabelaValoresValue[1][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.038      ; 1.108      ;
+; 0.806 ; Tomasulo:tomas|count[2]                      ; Tomasulo:tomas|count[2]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 1.072      ;
+; 0.835 ; Tomasulo:tomas|count[3]                      ; Tomasulo:tomas|count[3]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 1.101      ;
+; 0.836 ; Tomasulo:tomas|SumBusy                       ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 1.102      ;
+; 0.888 ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ; Tomasulo:tomas|SumParamB[3]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.047      ; 1.201      ;
+; 0.892 ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 1.158      ;
+; 0.923 ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ; Tomasulo:tomas|SumParamC[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.047      ; 1.236      ;
+; 0.924 ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ; Tomasulo:tomas|SumParamC[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.047      ; 1.237      ;
+; 0.924 ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ; Tomasulo:tomas|SumParamB[11]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.047      ; 1.237      ;
+; 0.942 ; Tomasulo:tomas|TabelaValoresValue[3][2]      ; Tomasulo:tomas|bancoReg[0][2]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 1.207      ;
+; 0.945 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[3][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.015      ; 1.226      ;
+; 0.949 ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ; Tomasulo:tomas|SumParamB[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.018      ; 1.233      ;
+; 0.984 ; Tomasulo:tomas|TabelaValoresValue[3][6]      ; Tomasulo:tomas|bancoReg[0][6]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 1.249      ;
+; 0.985 ; Tomasulo:tomas|TabelaValoresValue[3][3]      ; Tomasulo:tomas|bancoReg[0][3]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 1.250      ;
+; 0.987 ; Tomasulo:tomas|TabelaValoresValue[2][0]      ; Tomasulo:tomas|bancoReg[0][0]                ; SW[16]       ; SW[16]      ; 0.000        ; 0.001      ; 1.254      ;
+; 0.987 ; Tomasulo:tomas|TabelaValoresValue[3][5]      ; Tomasulo:tomas|bancoReg[0][5]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 1.252      ;
+; 0.999 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[2][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.110      ; 1.375      ;
+; 0.999 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[0][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.110      ; 1.375      ;
+; 1.001 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[1][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.088      ; 1.355      ;
+; 1.026 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[0][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.060      ; 1.352      ;
+; 1.028 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[2][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.060      ; 1.354      ;
+; 1.043 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|TabelaValoresValue[0][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.060      ; 1.369      ;
+; 1.047 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|TabelaValoresValue[2][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.060      ; 1.373      ;
+; 1.053 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|TabelaValoresValue[3][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.040      ; 1.359      ;
+; 1.054 ; Tomasulo:tomas|EstacaoReservaAddVj[1][12]    ; Tomasulo:tomas|SumParamB[12]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.001      ; 1.321      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'SW[16]'                                                                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; SW[16] ; Rise       ; SW[16]                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumBusy                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumBusy                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumDone                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumDone                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumIndex[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumIndex[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumOp.00                      ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; SW[16]     ; 7.129 ; 7.129 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; 7.129 ; 7.129 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[16]     ; -2.982 ; -2.982 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; -2.982 ; -2.982 ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 11.646 ; 11.646 ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 10.379 ; 10.379 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 10.359 ; 10.359 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 11.646 ; 11.646 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 10.835 ; 10.835 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 10.749 ; 10.749 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 10.563 ; 10.563 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 10.595 ; 10.595 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 10.928 ; 10.928 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 9.218  ; 9.218  ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 9.166  ; 9.166  ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 9.607  ; 9.607  ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 9.191  ; 9.191  ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 9.278  ; 9.278  ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 9.375  ; 9.375  ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 9.915  ; 9.915  ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 9.057  ; 9.057  ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 9.057  ; 9.057  ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 10.379 ; 10.379 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 10.359 ; 10.359 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 11.646 ; 11.646 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 10.835 ; 10.835 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 10.749 ; 10.749 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 10.563 ; 10.563 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 10.595 ; 10.595 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 10.928 ; 10.928 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 9.218  ; 9.218  ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 9.166  ; 9.166  ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 9.607  ; 9.607  ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 9.191  ; 9.191  ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 9.278  ; 9.278  ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 9.375  ; 9.375  ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 9.915  ; 9.915  ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 9.057  ; 9.057  ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------+
+; Propagation Delay                                          ;
++------------+-------------+-------+--------+--------+-------+
+; Input Port ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++------------+-------------+-------+--------+--------+-------+
+; SW[0]      ; LEDR[0]     ; 8.570 ;        ;        ; 8.570 ;
+; SW[0]      ; LEDR[1]     ;       ; 8.983  ; 8.983  ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 9.716  ; 9.716  ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 8.876  ; 8.876  ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 8.993  ; 8.993  ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 8.813  ; 8.813  ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 8.620  ; 8.620  ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 9.546  ; 9.546  ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 7.401  ; 7.401  ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 7.421  ; 7.421  ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 8.121  ; 8.121  ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 8.439  ; 8.439  ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 8.119  ; 8.119  ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 8.415  ; 8.415  ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 7.918  ; 7.918  ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 7.927  ; 7.927  ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 10.642 ; 10.642 ;       ;
+; SW[1]      ; LEDR[1]     ; 8.407 ;        ;        ; 8.407 ;
+; SW[1]      ; LEDR[2]     ;       ; 9.137  ; 9.137  ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 10.945 ; 10.945 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 11.064 ; 11.064 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 10.884 ; 10.884 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 10.690 ; 10.690 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 11.617 ; 11.617 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 8.374  ; 8.374  ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 8.394  ; 8.394  ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 10.194 ; 10.194 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 10.069 ; 10.069 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 10.191 ; 10.191 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 10.040 ; 10.040 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 9.815  ; 9.815  ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 9.997  ; 9.997  ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 10.296 ; 10.296 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 8.443  ; 8.443  ;       ;
+; SW[2]      ; LEDR[2]     ; 9.195 ;        ;        ; 9.195 ;
+; SW[2]      ; LEDR[3]     ;       ; 10.599 ; 10.599 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 10.718 ; 10.718 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 10.538 ; 10.538 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 10.344 ; 10.344 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 11.271 ; 11.271 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 8.028  ; 8.028  ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 8.048  ; 8.048  ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 9.848  ; 9.848  ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 9.723  ; 9.723  ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 9.845  ; 9.845  ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 9.694  ; 9.694  ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 9.469  ; 9.469  ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 9.651  ; 9.651  ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 8.602  ; 8.602  ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 8.632  ; 8.632  ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 9.365  ; 9.365  ;       ;
+; SW[3]      ; LEDR[3]     ; 8.941 ;        ;        ; 8.941 ;
+; SW[3]      ; LEDR[4]     ;       ; 9.013  ; 9.013  ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 8.832  ; 8.832  ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 8.636  ; 8.636  ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 9.584  ; 9.584  ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 7.050  ; 7.050  ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 7.070  ; 7.070  ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 8.161  ; 8.161  ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 8.200  ; 8.200  ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 7.949  ; 7.949  ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 7.943  ; 7.943  ;       ;
++------------+-------------+-------+--------+--------+-------+
+
+
++------------------------------------------------------------+
+; Minimum Propagation Delay                                  ;
++------------+-------------+-------+--------+--------+-------+
+; Input Port ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++------------+-------------+-------+--------+--------+-------+
+; SW[0]      ; LEDR[0]     ; 8.570 ;        ;        ; 8.570 ;
+; SW[0]      ; LEDR[1]     ;       ; 8.983  ; 8.983  ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 9.716  ; 9.716  ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 8.876  ; 8.876  ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 8.993  ; 8.993  ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 8.813  ; 8.813  ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 8.620  ; 8.620  ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 9.546  ; 9.546  ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 7.401  ; 7.401  ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 7.421  ; 7.421  ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 8.121  ; 8.121  ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 8.439  ; 8.439  ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 8.119  ; 8.119  ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 8.415  ; 8.415  ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 7.918  ; 7.918  ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 7.927  ; 7.927  ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 10.642 ; 10.642 ;       ;
+; SW[1]      ; LEDR[1]     ; 8.407 ;        ;        ; 8.407 ;
+; SW[1]      ; LEDR[2]     ;       ; 9.137  ; 9.137  ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 10.945 ; 10.945 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 11.064 ; 11.064 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 10.884 ; 10.884 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 10.690 ; 10.690 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 11.617 ; 11.617 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 8.374  ; 8.374  ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 8.394  ; 8.394  ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 10.194 ; 10.194 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 10.069 ; 10.069 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 10.191 ; 10.191 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 10.040 ; 10.040 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 9.815  ; 9.815  ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 9.997  ; 9.997  ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 10.296 ; 10.296 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 8.443  ; 8.443  ;       ;
+; SW[2]      ; LEDR[2]     ; 9.195 ;        ;        ; 9.195 ;
+; SW[2]      ; LEDR[3]     ;       ; 10.599 ; 10.599 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 10.718 ; 10.718 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 10.538 ; 10.538 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 10.344 ; 10.344 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 11.271 ; 11.271 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 8.028  ; 8.028  ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 8.048  ; 8.048  ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 9.848  ; 9.848  ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 9.723  ; 9.723  ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 9.845  ; 9.845  ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 9.694  ; 9.694  ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 9.469  ; 9.469  ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 9.651  ; 9.651  ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 8.602  ; 8.602  ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 8.632  ; 8.632  ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 9.365  ; 9.365  ;       ;
+; SW[3]      ; LEDR[3]     ; 8.941 ;        ;        ; 8.941 ;
+; SW[3]      ; LEDR[4]     ;       ; 9.013  ; 9.013  ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 8.832  ; 8.832  ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 8.636  ; 8.636  ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 9.584  ; 9.584  ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 7.050  ; 7.050  ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 7.070  ; 7.070  ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 8.161  ; 8.161  ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 8.200  ; 8.200  ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 7.949  ; 7.949  ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 7.943  ; 7.943  ;       ;
++------------+-------------+-------+--------+--------+-------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; SW[16] ; -3.751 ; -459.506      ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; SW[16] ; 0.215 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; SW[16] ; -1.222 ; -203.222             ;
++--------+--------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'SW[16]'                                                                                                                                     ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.751 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.140      ; 4.923      ;
+; -3.751 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.140      ; 4.923      ;
+; -3.751 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.140      ; 4.923      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.738 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.129      ; 4.899      ;
+; -3.720 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.083      ; 4.835      ;
+; -3.720 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.010      ; 4.762      ;
+; -3.720 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.010      ; 4.762      ;
+; -3.720 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.010      ; 4.762      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.707 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; -0.001     ; 4.738      ;
+; -3.691 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.817      ;
+; -3.691 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.817      ;
+; -3.691 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.817      ;
+; -3.691 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.817      ;
+; -3.689 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.114      ; 4.835      ;
+; -3.689 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.114      ; 4.835      ;
+; -3.689 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.114      ; 4.835      ;
+; -3.689 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; -0.047     ; 4.674      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.676 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.103      ; 4.811      ;
+; -3.673 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.120      ; 4.825      ;
+; -3.673 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.120      ; 4.825      ;
+; -3.673 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.120      ; 4.825      ;
+; -3.673 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.120      ; 4.825      ;
+; -3.660 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.036     ; 4.656      ;
+; -3.660 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.036     ; 4.656      ;
+; -3.660 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.036     ; 4.656      ;
+; -3.660 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; -0.036     ; 4.656      ;
+; -3.658 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.057      ; 4.747      ;
+; -3.642 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.010     ; 4.664      ;
+; -3.642 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; -0.010     ; 4.664      ;
+; -3.642 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; -0.010     ; 4.664      ;
+; -3.642 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; -0.010     ; 4.664      ;
+; -3.641 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.144      ; 4.817      ;
+; -3.641 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.144      ; 4.817      ;
+; -3.641 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.144      ; 4.817      ;
+; -3.629 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.068      ; 4.729      ;
+; -3.629 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.068      ; 4.729      ;
+; -3.629 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.068      ; 4.729      ;
+; -3.629 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.068      ; 4.729      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][0]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][1]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][2]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][3]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][4]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][5]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][6]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.628 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][14] ; SW[16]       ; SW[16]      ; 1.000        ; 0.133      ; 4.793      ;
+; -3.611 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.737      ;
+; -3.611 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.737      ;
+; -3.611 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.737      ;
+; -3.611 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.094      ; 4.737      ;
+; -3.610 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][13] ; SW[16]       ; SW[16]      ; 1.000        ; 0.087      ; 4.729      ;
+; -3.581 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[1]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.098      ; 4.711      ;
+; -3.581 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[2]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.098      ; 4.711      ;
+; -3.581 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[3]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.098      ; 4.711      ;
+; -3.581 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|count[4]                  ; SW[16]       ; SW[16]      ; 1.000        ; 0.098      ; 4.711      ;
+; -3.563 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.124      ; 4.719      ;
+; -3.563 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.124      ; 4.719      ;
+; -3.563 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.124      ; 4.719      ;
+; -3.563 ; Tomasulo:tomas|TabelaValoresIndex[1] ; Tomasulo:tomas|TabelaValoresValue[3][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.124      ; 4.719      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.553 ; Tomasulo:tomas|TabelaValoresBusy[1]  ; Tomasulo:tomas|TabelaValoresValue[1][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.138      ; 4.723      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.522 ; Tomasulo:tomas|TabelaValoresBusy[0]  ; Tomasulo:tomas|TabelaValoresValue[1][15] ; SW[16]       ; SW[16]      ; 1.000        ; 0.008      ; 4.562      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][7]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][8]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][9]  ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][10] ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][11] ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
+; -3.491 ; Tomasulo:tomas|TabelaValoresIndex[0] ; Tomasulo:tomas|TabelaValoresValue[1][12] ; SW[16]       ; SW[16]      ; 1.000        ; 0.112      ; 4.635      ;
++--------+--------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'SW[16]'                                                                                                                                                 ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Tomasulo:tomas|SumIndex[2]                   ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumState[0]                   ; Tomasulo:tomas|SumState[0]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|count[0]                      ; Tomasulo:tomas|count[0]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[1][10]     ; Tomasulo:tomas|TabelaValoresLabel[1][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[1][8]      ; Tomasulo:tomas|TabelaValoresLabel[1][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[1][9]      ; Tomasulo:tomas|TabelaValoresLabel[1][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[1][7]      ; Tomasulo:tomas|TabelaValoresLabel[1][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[1][6]      ; Tomasulo:tomas|TabelaValoresLabel[1][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[0][10]     ; Tomasulo:tomas|TabelaValoresLabel[0][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[0][8]      ; Tomasulo:tomas|TabelaValoresLabel[0][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[0][9]      ; Tomasulo:tomas|TabelaValoresLabel[0][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[0][6]      ; Tomasulo:tomas|TabelaValoresLabel[0][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[0][7]      ; Tomasulo:tomas|TabelaValoresLabel[0][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[2][6]      ; Tomasulo:tomas|TabelaValoresLabel[2][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[2][7]      ; Tomasulo:tomas|TabelaValoresLabel[2][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[2][8]      ; Tomasulo:tomas|TabelaValoresLabel[2][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[2][9]      ; Tomasulo:tomas|TabelaValoresLabel[2][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[2][10]     ; Tomasulo:tomas|TabelaValoresLabel[2][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[3][8]      ; Tomasulo:tomas|TabelaValoresLabel[3][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[3][9]      ; Tomasulo:tomas|TabelaValoresLabel[3][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[3][10]     ; Tomasulo:tomas|TabelaValoresLabel[3][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[3][7]      ; Tomasulo:tomas|TabelaValoresLabel[3][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresLabel[3][6]      ; Tomasulo:tomas|TabelaValoresLabel[3][6]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresIndex[0]         ; Tomasulo:tomas|TabelaValoresIndex[0]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresIndex[2]         ; Tomasulo:tomas|TabelaValoresIndex[2]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|TabelaValoresIndex[1]         ; Tomasulo:tomas|TabelaValoresIndex[1]         ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[0]                  ; Tomasulo:tomas|SumParamB[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumOp.00                      ; Tomasulo:tomas|SumOp.00                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[0]                   ; Tomasulo:tomas|SumValue[0]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamC[0]                  ; Tomasulo:tomas|SumParamC[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[1]                  ; Tomasulo:tomas|SumParamB[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[1]                   ; Tomasulo:tomas|SumValue[1]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamC[1]                  ; Tomasulo:tomas|SumParamC[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[2]                   ; Tomasulo:tomas|SumValue[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[3]                   ; Tomasulo:tomas|SumValue[3]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[3]                  ; Tomasulo:tomas|SumParamB[3]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[4]                   ; Tomasulo:tomas|SumValue[4]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[4]                  ; Tomasulo:tomas|SumParamB[4]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[5]                   ; Tomasulo:tomas|SumValue[5]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[5]                  ; Tomasulo:tomas|SumParamB[5]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[6]                   ; Tomasulo:tomas|SumValue[6]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|SumValue[7]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[7]                  ; Tomasulo:tomas|SumParamB[7]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[8]                   ; Tomasulo:tomas|SumValue[8]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[8]                  ; Tomasulo:tomas|SumParamB[8]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|SumValue[9]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[9]                  ; Tomasulo:tomas|SumParamB[9]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|SumValue[10]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[10]                 ; Tomasulo:tomas|SumParamB[10]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|SumValue[11]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[11]                 ; Tomasulo:tomas|SumParamB[11]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[12]                 ; Tomasulo:tomas|SumParamB[12]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[12]                  ; Tomasulo:tomas|SumValue[12]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[13]                  ; Tomasulo:tomas|SumValue[13]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[13]                 ; Tomasulo:tomas|SumParamB[13]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumParamB[14]                 ; Tomasulo:tomas|SumParamB[14]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[14]                  ; Tomasulo:tomas|SumValue[14]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Tomasulo:tomas|SumValue[15]                  ; Tomasulo:tomas|SumValue[15]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; Tomasulo:tomas|count[4]                      ; Tomasulo:tomas|count[4]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.393      ;
+; 0.268 ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.420      ;
+; 0.315 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[1][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.024      ; 0.491      ;
+; 0.361 ; Tomasulo:tomas|count[2]                      ; Tomasulo:tomas|count[2]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.513      ;
+; 0.369 ; Tomasulo:tomas|count[3]                      ; Tomasulo:tomas|count[3]                      ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.521      ;
+; 0.376 ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ; Tomasulo:tomas|SumParamB[4]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ; Tomasulo:tomas|SumParamB[13]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.529      ;
+; 0.383 ; Tomasulo:tomas|SumBusy                       ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.535      ;
+; 0.393 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|TabelaValoresValue[3][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.026      ; 0.571      ;
+; 0.397 ; Tomasulo:tomas|SumValue[9]                   ; Tomasulo:tomas|TabelaValoresValue[1][9]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.024      ; 0.573      ;
+; 0.404 ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ; Tomasulo:tomas|SumIndex[2]                   ; SW[16]       ; SW[16]      ; 0.000        ; 0.000      ; 0.556      ;
+; 0.434 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[3][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.006      ; 0.592      ;
+; 0.439 ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ; Tomasulo:tomas|SumParamB[3]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.015      ; 0.606      ;
+; 0.441 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[1][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.079      ; 0.672      ;
+; 0.444 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[2][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.091      ; 0.687      ;
+; 0.444 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[0][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.091      ; 0.687      ;
+; 0.445 ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ; Tomasulo:tomas|SumParamC[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.015      ; 0.612      ;
+; 0.446 ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ; Tomasulo:tomas|SumParamB[11]                 ; SW[16]       ; SW[16]      ; 0.000        ; 0.015      ; 0.613      ;
+; 0.447 ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ; Tomasulo:tomas|SumParamC[0]                  ; SW[16]       ; SW[16]      ; 0.000        ; 0.015      ; 0.614      ;
+; 0.458 ; Tomasulo:tomas|TabelaValoresValue[3][2]      ; Tomasulo:tomas|bancoReg[0][2]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.002     ; 0.608      ;
+; 0.459 ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ; Tomasulo:tomas|SumParamB[1]                  ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 0.610      ;
+; 0.470 ; Tomasulo:tomas|TabelaValoresValue[3][6]      ; Tomasulo:tomas|bancoReg[0][6]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.002     ; 0.620      ;
+; 0.471 ; Tomasulo:tomas|TabelaValoresValue[3][3]      ; Tomasulo:tomas|bancoReg[0][3]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.002     ; 0.621      ;
+; 0.472 ; Tomasulo:tomas|TabelaValoresValue[2][0]      ; Tomasulo:tomas|bancoReg[0][0]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.001     ; 0.623      ;
+; 0.472 ; Tomasulo:tomas|TabelaValoresValue[3][5]      ; Tomasulo:tomas|bancoReg[0][5]                ; SW[16]       ; SW[16]      ; 0.000        ; -0.002     ; 0.622      ;
+; 0.482 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[0][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.036      ; 0.670      ;
+; 0.484 ; Tomasulo:tomas|SumValue[7]                   ; Tomasulo:tomas|TabelaValoresValue[2][7]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.036      ; 0.672      ;
+; 0.484 ; Tomasulo:tomas|SumValue[11]                  ; Tomasulo:tomas|TabelaValoresValue[3][11]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.061      ; 0.697      ;
+; 0.492 ; Tomasulo:tomas|SumValue[8]                   ; Tomasulo:tomas|TabelaValoresValue[1][8]      ; SW[16]       ; SW[16]      ; 0.000        ; 0.065      ; 0.709      ;
+; 0.493 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|TabelaValoresValue[0][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.036      ; 0.681      ;
+; 0.494 ; Tomasulo:tomas|SumValue[10]                  ; Tomasulo:tomas|TabelaValoresValue[3][10]     ; SW[16]       ; SW[16]      ; 0.000        ; 0.026      ; 0.672      ;
++-------+----------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'SW[16]'                                                                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                       ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; SW[16] ; Rise       ; SW[16]                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddBusy[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[0][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddLabel[1][9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[0][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVj[1][9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[0][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|EstacaoReservaAddVk[1][1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumBusy                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumBusy                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumDone                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumDone                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumIndex[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; SW[16] ; Rise       ; Tomasulo:tomas|SumIndex[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; SW[16] ; Rise       ; Tomasulo:tomas|SumOp.00                      ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; SW[16]     ; 3.933 ; 3.933 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; 3.933 ; 3.933 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[16]     ; -1.870 ; -1.870 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; -1.870 ; -1.870 ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 5.920 ; 5.920 ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 5.380 ; 5.380 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 5.375 ; 5.375 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 5.920 ; 5.920 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 5.547 ; 5.547 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 5.545 ; 5.545 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 5.470 ; 5.470 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 5.465 ; 5.465 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 5.558 ; 5.558 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 4.786 ; 4.786 ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 4.737 ; 4.737 ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 4.945 ; 4.945 ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 4.757 ; 4.757 ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 4.806 ; 4.806 ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 4.825 ; 4.825 ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 5.105 ; 5.105 ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 4.717 ; 4.717 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 4.717 ; 4.717 ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 5.380 ; 5.380 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 5.375 ; 5.375 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 5.920 ; 5.920 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 5.547 ; 5.547 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 5.545 ; 5.545 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 5.470 ; 5.470 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 5.465 ; 5.465 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 5.558 ; 5.558 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 4.786 ; 4.786 ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 4.737 ; 4.737 ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 4.945 ; 4.945 ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 4.757 ; 4.757 ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 4.806 ; 4.806 ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 4.825 ; 4.825 ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 5.105 ; 5.105 ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 4.717 ; 4.717 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 4.493 ;       ;       ; 4.493 ;
+; SW[0]      ; LEDR[1]     ;       ; 4.582 ; 4.582 ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 4.858 ; 4.858 ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 4.596 ; 4.596 ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 4.662 ; 4.662 ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 4.593 ; 4.593 ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 4.489 ; 4.489 ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 4.856 ; 4.856 ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 3.824 ; 3.824 ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 3.842 ; 3.842 ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 4.197 ; 4.197 ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 4.365 ; 4.365 ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 4.203 ; 4.203 ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 4.347 ; 4.347 ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 4.125 ; 4.125 ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 4.131 ; 4.131 ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 5.453 ; 5.453 ;       ;
+; SW[1]      ; LEDR[1]     ; 4.392 ;       ;       ; 4.392 ;
+; SW[1]      ; LEDR[2]     ;       ; 4.668 ; 4.668 ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 5.555 ; 5.555 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 5.629 ; 5.629 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 5.558 ; 5.558 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 5.455 ; 5.455 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 5.821 ; 5.821 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 4.332 ; 4.332 ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 4.350 ; 4.350 ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 5.164 ; 5.164 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 5.141 ; 5.141 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 5.170 ; 5.170 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 5.125 ; 5.125 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 5.033 ; 5.033 ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 5.097 ; 5.097 ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 5.225 ; 5.225 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 4.364 ; 4.364 ;       ;
+; SW[2]      ; LEDR[2]     ; 4.644 ;       ;       ; 4.644 ;
+; SW[2]      ; LEDR[3]     ;       ; 5.327 ; 5.327 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 5.401 ; 5.401 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 5.330 ; 5.330 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 5.227 ; 5.227 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 5.593 ; 5.593 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 4.104 ; 4.104 ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 4.122 ; 4.122 ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 4.936 ; 4.936 ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 4.913 ; 4.913 ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 4.942 ; 4.942 ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 4.897 ; 4.897 ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 4.805 ; 4.805 ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 4.869 ; 4.869 ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 4.515 ; 4.515 ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 4.473 ; 4.473 ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 4.749 ; 4.749 ;       ;
+; SW[3]      ; LEDR[3]     ; 4.631 ;       ;       ; 4.631 ;
+; SW[3]      ; LEDR[4]     ;       ; 4.696 ; 4.696 ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 4.624 ; 4.624 ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 4.516 ; 4.516 ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 4.902 ; 4.902 ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 3.712 ; 3.712 ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 3.730 ; 3.730 ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 4.244 ; 4.244 ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 4.274 ; 4.274 ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 4.247 ; 4.247 ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 4.241 ; 4.241 ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 4.164 ; 4.164 ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 4.157 ; 4.157 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 4.493 ;       ;       ; 4.493 ;
+; SW[0]      ; LEDR[1]     ;       ; 4.582 ; 4.582 ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 4.858 ; 4.858 ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 4.596 ; 4.596 ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 4.662 ; 4.662 ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 4.593 ; 4.593 ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 4.489 ; 4.489 ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 4.856 ; 4.856 ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 3.824 ; 3.824 ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 3.842 ; 3.842 ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 4.197 ; 4.197 ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 4.365 ; 4.365 ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 4.203 ; 4.203 ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 4.347 ; 4.347 ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 4.125 ; 4.125 ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 4.131 ; 4.131 ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 5.453 ; 5.453 ;       ;
+; SW[1]      ; LEDR[1]     ; 4.392 ;       ;       ; 4.392 ;
+; SW[1]      ; LEDR[2]     ;       ; 4.668 ; 4.668 ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 5.555 ; 5.555 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 5.629 ; 5.629 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 5.558 ; 5.558 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 5.455 ; 5.455 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 5.821 ; 5.821 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 4.332 ; 4.332 ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 4.350 ; 4.350 ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 5.164 ; 5.164 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 5.141 ; 5.141 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 5.170 ; 5.170 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 5.125 ; 5.125 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 5.033 ; 5.033 ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 5.097 ; 5.097 ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 5.225 ; 5.225 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 4.364 ; 4.364 ;       ;
+; SW[2]      ; LEDR[2]     ; 4.644 ;       ;       ; 4.644 ;
+; SW[2]      ; LEDR[3]     ;       ; 5.327 ; 5.327 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 5.401 ; 5.401 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 5.330 ; 5.330 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 5.227 ; 5.227 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 5.593 ; 5.593 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 4.104 ; 4.104 ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 4.122 ; 4.122 ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 4.936 ; 4.936 ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 4.913 ; 4.913 ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 4.942 ; 4.942 ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 4.897 ; 4.897 ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 4.805 ; 4.805 ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 4.869 ; 4.869 ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 4.515 ; 4.515 ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 4.473 ; 4.473 ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 4.749 ; 4.749 ;       ;
+; SW[3]      ; LEDR[3]     ; 4.631 ;       ;       ; 4.631 ;
+; SW[3]      ; LEDR[4]     ;       ; 4.696 ; 4.696 ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 4.624 ; 4.624 ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 4.516 ; 4.516 ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 4.902 ; 4.902 ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 3.712 ; 3.712 ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 3.730 ; 3.730 ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 4.244 ; 4.244 ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 4.274 ; 4.274 ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 4.247 ; 4.247 ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 4.241 ; 4.241 ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 4.164 ; 4.164 ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 4.157 ; 4.157 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -9.684    ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+;  SW[16]          ; -9.684    ; 0.215 ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -1273.072 ; 0.0   ; 0.0      ; 0.0     ; -203.222            ;
+;  SW[16]          ; -1273.072 ; 0.000 ; N/A      ; N/A     ; -203.222            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; SW[16]     ; 7.129 ; 7.129 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; 7.129 ; 7.129 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; SW[16]     ; -1.870 ; -1.870 ; Rise       ; SW[16]          ;
+;  SW[17]   ; SW[16]     ; -1.870 ; -1.870 ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 8.598  ; 8.598  ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 11.646 ; 11.646 ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 10.379 ; 10.379 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 10.359 ; 10.359 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 11.646 ; 11.646 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 10.835 ; 10.835 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 10.749 ; 10.749 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 10.563 ; 10.563 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 10.595 ; 10.595 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 10.928 ; 10.928 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 9.218  ; 9.218  ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 9.166  ; 9.166  ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 9.607  ; 9.607  ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 9.191  ; 9.191  ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 9.278  ; 9.278  ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 9.375  ; 9.375  ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 9.915  ; 9.915  ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 9.057  ; 9.057  ; Rise       ; SW[16]          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDG[*]   ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+;  LEDG[0]  ; SW[16]     ; 4.596 ; 4.596 ; Rise       ; SW[16]          ;
+; LEDR[*]   ; SW[16]     ; 4.717 ; 4.717 ; Rise       ; SW[16]          ;
+;  LEDR[0]  ; SW[16]     ; 5.380 ; 5.380 ; Rise       ; SW[16]          ;
+;  LEDR[1]  ; SW[16]     ; 5.375 ; 5.375 ; Rise       ; SW[16]          ;
+;  LEDR[2]  ; SW[16]     ; 5.920 ; 5.920 ; Rise       ; SW[16]          ;
+;  LEDR[3]  ; SW[16]     ; 5.547 ; 5.547 ; Rise       ; SW[16]          ;
+;  LEDR[4]  ; SW[16]     ; 5.545 ; 5.545 ; Rise       ; SW[16]          ;
+;  LEDR[5]  ; SW[16]     ; 5.470 ; 5.470 ; Rise       ; SW[16]          ;
+;  LEDR[6]  ; SW[16]     ; 5.465 ; 5.465 ; Rise       ; SW[16]          ;
+;  LEDR[7]  ; SW[16]     ; 5.558 ; 5.558 ; Rise       ; SW[16]          ;
+;  LEDR[8]  ; SW[16]     ; 4.786 ; 4.786 ; Rise       ; SW[16]          ;
+;  LEDR[9]  ; SW[16]     ; 4.737 ; 4.737 ; Rise       ; SW[16]          ;
+;  LEDR[10] ; SW[16]     ; 4.945 ; 4.945 ; Rise       ; SW[16]          ;
+;  LEDR[11] ; SW[16]     ; 4.757 ; 4.757 ; Rise       ; SW[16]          ;
+;  LEDR[12] ; SW[16]     ; 4.806 ; 4.806 ; Rise       ; SW[16]          ;
+;  LEDR[13] ; SW[16]     ; 4.825 ; 4.825 ; Rise       ; SW[16]          ;
+;  LEDR[14] ; SW[16]     ; 5.105 ; 5.105 ; Rise       ; SW[16]          ;
+;  LEDR[15] ; SW[16]     ; 4.717 ; 4.717 ; Rise       ; SW[16]          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------+
+; Progagation Delay                                          ;
++------------+-------------+-------+--------+--------+-------+
+; Input Port ; Output Port ; RR    ; RF     ; FR     ; FF    ;
++------------+-------------+-------+--------+--------+-------+
+; SW[0]      ; LEDR[0]     ; 8.570 ;        ;        ; 8.570 ;
+; SW[0]      ; LEDR[1]     ;       ; 8.983  ; 8.983  ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 9.716  ; 9.716  ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 8.876  ; 8.876  ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 8.993  ; 8.993  ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 8.813  ; 8.813  ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 8.620  ; 8.620  ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 9.546  ; 9.546  ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 7.401  ; 7.401  ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 7.421  ; 7.421  ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 8.121  ; 8.121  ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 8.439  ; 8.439  ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 8.119  ; 8.119  ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 8.415  ; 8.415  ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 7.918  ; 7.918  ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 7.927  ; 7.927  ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 10.642 ; 10.642 ;       ;
+; SW[1]      ; LEDR[1]     ; 8.407 ;        ;        ; 8.407 ;
+; SW[1]      ; LEDR[2]     ;       ; 9.137  ; 9.137  ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 10.945 ; 10.945 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 11.064 ; 11.064 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 10.884 ; 10.884 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 10.690 ; 10.690 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 11.617 ; 11.617 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 8.374  ; 8.374  ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 8.394  ; 8.394  ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 10.194 ; 10.194 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 10.069 ; 10.069 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 10.191 ; 10.191 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 10.040 ; 10.040 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 9.815  ; 9.815  ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 9.997  ; 9.997  ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 10.296 ; 10.296 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 8.443  ; 8.443  ;       ;
+; SW[2]      ; LEDR[2]     ; 9.195 ;        ;        ; 9.195 ;
+; SW[2]      ; LEDR[3]     ;       ; 10.599 ; 10.599 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 10.718 ; 10.718 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 10.538 ; 10.538 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 10.344 ; 10.344 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 11.271 ; 11.271 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 8.028  ; 8.028  ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 8.048  ; 8.048  ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 9.848  ; 9.848  ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 9.723  ; 9.723  ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 9.845  ; 9.845  ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 9.694  ; 9.694  ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 9.469  ; 9.469  ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 9.651  ; 9.651  ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 8.602  ; 8.602  ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 8.632  ; 8.632  ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 9.365  ; 9.365  ;       ;
+; SW[3]      ; LEDR[3]     ; 8.941 ;        ;        ; 8.941 ;
+; SW[3]      ; LEDR[4]     ;       ; 9.013  ; 9.013  ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 8.832  ; 8.832  ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 8.636  ; 8.636  ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 9.584  ; 9.584  ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 7.050  ; 7.050  ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 7.070  ; 7.070  ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 8.161  ; 8.161  ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 8.200  ; 8.200  ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 8.156  ; 8.156  ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 7.949  ; 7.949  ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 7.943  ; 7.943  ;       ;
++------------+-------------+-------+--------+--------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; SW[0]      ; LEDR[0]     ; 4.493 ;       ;       ; 4.493 ;
+; SW[0]      ; LEDR[1]     ;       ; 4.582 ; 4.582 ;       ;
+; SW[0]      ; LEDR[2]     ;       ; 4.858 ; 4.858 ;       ;
+; SW[0]      ; LEDR[3]     ;       ; 4.596 ; 4.596 ;       ;
+; SW[0]      ; LEDR[4]     ;       ; 4.662 ; 4.662 ;       ;
+; SW[0]      ; LEDR[5]     ;       ; 4.593 ; 4.593 ;       ;
+; SW[0]      ; LEDR[6]     ;       ; 4.489 ; 4.489 ;       ;
+; SW[0]      ; LEDR[7]     ;       ; 4.856 ; 4.856 ;       ;
+; SW[0]      ; LEDR[8]     ;       ; 3.824 ; 3.824 ;       ;
+; SW[0]      ; LEDR[9]     ;       ; 3.842 ; 3.842 ;       ;
+; SW[0]      ; LEDR[10]    ;       ; 4.197 ; 4.197 ;       ;
+; SW[0]      ; LEDR[11]    ;       ; 4.365 ; 4.365 ;       ;
+; SW[0]      ; LEDR[12]    ;       ; 4.203 ; 4.203 ;       ;
+; SW[0]      ; LEDR[13]    ;       ; 4.347 ; 4.347 ;       ;
+; SW[0]      ; LEDR[14]    ;       ; 4.125 ; 4.125 ;       ;
+; SW[0]      ; LEDR[15]    ;       ; 4.131 ; 4.131 ;       ;
+; SW[1]      ; LEDR[0]     ;       ; 5.453 ; 5.453 ;       ;
+; SW[1]      ; LEDR[1]     ; 4.392 ;       ;       ; 4.392 ;
+; SW[1]      ; LEDR[2]     ;       ; 4.668 ; 4.668 ;       ;
+; SW[1]      ; LEDR[3]     ;       ; 5.555 ; 5.555 ;       ;
+; SW[1]      ; LEDR[4]     ;       ; 5.629 ; 5.629 ;       ;
+; SW[1]      ; LEDR[5]     ;       ; 5.558 ; 5.558 ;       ;
+; SW[1]      ; LEDR[6]     ;       ; 5.455 ; 5.455 ;       ;
+; SW[1]      ; LEDR[7]     ;       ; 5.821 ; 5.821 ;       ;
+; SW[1]      ; LEDR[8]     ;       ; 4.332 ; 4.332 ;       ;
+; SW[1]      ; LEDR[9]     ;       ; 4.350 ; 4.350 ;       ;
+; SW[1]      ; LEDR[10]    ;       ; 5.164 ; 5.164 ;       ;
+; SW[1]      ; LEDR[11]    ;       ; 5.141 ; 5.141 ;       ;
+; SW[1]      ; LEDR[12]    ;       ; 5.170 ; 5.170 ;       ;
+; SW[1]      ; LEDR[13]    ;       ; 5.125 ; 5.125 ;       ;
+; SW[1]      ; LEDR[14]    ;       ; 5.033 ; 5.033 ;       ;
+; SW[1]      ; LEDR[15]    ;       ; 5.097 ; 5.097 ;       ;
+; SW[2]      ; LEDR[0]     ;       ; 5.225 ; 5.225 ;       ;
+; SW[2]      ; LEDR[1]     ;       ; 4.364 ; 4.364 ;       ;
+; SW[2]      ; LEDR[2]     ; 4.644 ;       ;       ; 4.644 ;
+; SW[2]      ; LEDR[3]     ;       ; 5.327 ; 5.327 ;       ;
+; SW[2]      ; LEDR[4]     ;       ; 5.401 ; 5.401 ;       ;
+; SW[2]      ; LEDR[5]     ;       ; 5.330 ; 5.330 ;       ;
+; SW[2]      ; LEDR[6]     ;       ; 5.227 ; 5.227 ;       ;
+; SW[2]      ; LEDR[7]     ;       ; 5.593 ; 5.593 ;       ;
+; SW[2]      ; LEDR[8]     ;       ; 4.104 ; 4.104 ;       ;
+; SW[2]      ; LEDR[9]     ;       ; 4.122 ; 4.122 ;       ;
+; SW[2]      ; LEDR[10]    ;       ; 4.936 ; 4.936 ;       ;
+; SW[2]      ; LEDR[11]    ;       ; 4.913 ; 4.913 ;       ;
+; SW[2]      ; LEDR[12]    ;       ; 4.942 ; 4.942 ;       ;
+; SW[2]      ; LEDR[13]    ;       ; 4.897 ; 4.897 ;       ;
+; SW[2]      ; LEDR[14]    ;       ; 4.805 ; 4.805 ;       ;
+; SW[2]      ; LEDR[15]    ;       ; 4.869 ; 4.869 ;       ;
+; SW[3]      ; LEDR[0]     ;       ; 4.515 ; 4.515 ;       ;
+; SW[3]      ; LEDR[1]     ;       ; 4.473 ; 4.473 ;       ;
+; SW[3]      ; LEDR[2]     ;       ; 4.749 ; 4.749 ;       ;
+; SW[3]      ; LEDR[3]     ; 4.631 ;       ;       ; 4.631 ;
+; SW[3]      ; LEDR[4]     ;       ; 4.696 ; 4.696 ;       ;
+; SW[3]      ; LEDR[5]     ;       ; 4.624 ; 4.624 ;       ;
+; SW[3]      ; LEDR[6]     ;       ; 4.516 ; 4.516 ;       ;
+; SW[3]      ; LEDR[7]     ;       ; 4.902 ; 4.902 ;       ;
+; SW[3]      ; LEDR[8]     ;       ; 3.712 ; 3.712 ;       ;
+; SW[3]      ; LEDR[9]     ;       ; 3.730 ; 3.730 ;       ;
+; SW[3]      ; LEDR[10]    ;       ; 4.244 ; 4.244 ;       ;
+; SW[3]      ; LEDR[11]    ;       ; 4.274 ; 4.274 ;       ;
+; SW[3]      ; LEDR[12]    ;       ; 4.247 ; 4.247 ;       ;
+; SW[3]      ; LEDR[13]    ;       ; 4.241 ; 4.241 ;       ;
+; SW[3]      ; LEDR[14]    ;       ; 4.164 ; 4.164 ;       ;
+; SW[3]      ; LEDR[15]    ;       ; 4.157 ; 4.157 ;       ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SW[16]     ; SW[16]   ; 292326   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; SW[16]     ; SW[16]   ; 292326   ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 266   ; 266  ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 81    ; 81   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri May 25 01:25:21 2018
+Info: Command: quartus_sta pratica3 -c pratica3
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pratica3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name SW[16] SW[16]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.684
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -9.684     -1273.072 SW[16] 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 SW[16] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222      -203.222 SW[16] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.751
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.751      -459.506 SW[16] 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 SW[16] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222      -203.222 SW[16] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 487 megabytes
+    Info: Processing ended: Fri May 25 01:25:23 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
